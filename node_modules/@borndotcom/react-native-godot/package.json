@@ -1,0 +1,177 @@
+{
+    "name": "@borndotcom/react-native-godot",
+    "version": "1.0.0",
+    "summary": "React Native Godot",
+    "description": "Embed Godot into React Native apps",
+    "main": "lib/commonjs/index",
+    "module": "lib/module/index",
+    "types": "lib/typescript/index.d.ts",
+    "react-native": "js/index",
+    "source": "js/index",
+    "files": [
+        "js",
+        "lib",
+        "common",
+        "android",
+        "ios",
+        "scripts",
+        "borndotcom-react-native-godot.podspec",
+        "prebuilt-utils.rb",
+        "!lib/typescript/example",
+        "!ios/libs",
+        "!ios/build",
+        "!android/libs",
+        "!android/build",
+        "!android/gradle",
+        "!android/gradlew",
+        "!android/gradlew.bat",
+        "!android/local.properties",
+        "!**/__tests__",
+        "!**/__fixtures__",
+        "!**/__mocks__",
+        "!**/.*"
+    ],
+    "scripts": {
+        "test": "jest",
+        "typecheck": "tsc --noEmit",
+        "lint": "eslint \"**/*.{js,ts,tsx}\"",
+        "prepack": "bob build",
+        "release": "release-it",
+        "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
+    },
+    "keywords": [
+        "react-native",
+        "ios",
+        "android"
+    ],
+    "repository": "https://github.com/borndotcom/react-native-godot.git",
+    "author": "React Native Godot Developers (Born & Migeran)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/borndotcom/react-native-godot/issues"
+    },
+    "homepage": "https://github.com/borndotcom/react-native-godot#readme",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
+    "npm": {
+        "versionArgs": ["--allow-same-version", "--workspaces-update=false"]
+    },
+    "devDependencies": {
+        "@babel/core": "^7.25.2",
+        "@babel/plugin-proposal-nullish-coalescing-operator": "~7.18.6",
+        "@babel/plugin-proposal-optional-chaining": "~7.21.0",
+        "@babel/preset-env": "^7.25.3",
+        "@babel/runtime": "^7.25.0",
+        "@react-native-community/cli": "^20.0.0",
+        "@react-native-community/cli-platform-android": "^20.0.0",
+        "@react-native-community/cli-platform-ios": "^20.0.0",
+        "@react-native/babel-preset": "^0.81.0",
+        "@react-native/eslint-config": "0.82.0",
+        "@react-native/metro-config": "^0.81.0",
+        "@react-native/typescript-config": "0.82.0",
+        "@release-it/conventional-changelog": "^5.0.0",
+        "@rnx-kit/align-deps": "^3.2.4",
+        "@types/jest": "^29.5.13",
+        "@types/react": "^19.0.0",
+        "babel-jest": "^30.0.4",
+        "clang-format": "^1.8.0",
+        "del-cli": "^5.0.0",
+        "eslint": "^8.19.0",
+        "eslint-plugin-ft-flow": "^3.0.11",
+        "eslint-plugin-prettier": "^4.2.1",
+        "hermes-eslint": "^0.32.1",
+        "jest": "^29.2.1",
+        "prettier": "2.8.8",
+        "react": "19.1.0",
+        "react-native": "0.81.0",
+        "react-native-builder-bob": "^0.20.0",
+        "release-it": "^15.0.0",
+        "typescript": "5.3.3"
+    },
+    "dependencies": {
+        "react-native-worklets-core": "1.6.2"
+    },
+    "peerDependencies": {
+        "react": "*",
+        "react-native": "*",
+        "react-native-worklets-core": "*"
+    },
+    "codegenConfig": {
+        "name": "RTNGodotSpec",
+        "type": "all",
+        "jsSrcsDir": "js",
+        "android": {
+            "javaPackageName": "com.migeran"
+        },
+        "ios": {
+            "modulesProvider": {
+                "NativeGodotModule": "NativeGodotModuleProvider"
+            },
+            "componentProvider": {
+                "RTNGodotView": "RTNGodotView"
+            }
+        }
+    },
+    "prebuiltFiles": [
+        {
+            "name": "libgodot",
+            "filename": "libgodot.xcframework.zip",
+            "version": "4.5.1.migeran.1",
+            "base_url": "https://github.com/migeran/libgodot/releases/download/",
+            "shasum": "08b8855e16dd76cbb912e30c5c019425bd58e090c7eabc5a630cfb38905bb7fc",
+            "destination_base_dir": "ios/libs",
+            "env": "LIBGODOT_XCFRAMEWORK_PATH",
+            "no_unpack": "false"
+        },
+        {
+            "name": "libgodot-cpp",
+            "filename": "libgodot-cpp.xcframework.zip",
+            "version": "4.5.1.migeran.1",
+            "base_url": "https://github.com/migeran/libgodot/releases/download/",
+            "shasum": "bb8bfa47ed82d057d8ed70d297769ca2960be92dea54377c8740dbb45f5f80e9",
+            "destination_base_dir": "ios/libs",
+            "env": "LIBGODOT_CPP_XCFRAMEWORK_PATH",
+            "no_unpack": "false"
+        },
+        {
+            "name": "libgodot-android",
+            "filename": "libgodot-android.zip",
+            "version": "4.5.1.migeran.1",
+            "base_url": "https://github.com/migeran/libgodot/releases/download/",
+            "shasum": "d38b972e8c24f208726e6917f977c29d624e0be2d151e124f5790fbe3ce3fa0d",
+            "destination_base_dir": "android/libs",
+            "env": "LIBGODOT_ANDROID_PATH",
+            "no_unpack": "false"
+        },
+        {
+            "name": "libgodot-cpp-android",
+            "filename": "godot-cpp-android.zip",
+            "version": "4.5.1.migeran.1",
+            "base_url": "https://github.com/migeran/libgodot/releases/download/",
+            "shasum": "c2b7a50fd59b4814d78fa4b9c49f38fc147c318960161a9a3a05ded6f383c23c",
+            "destination_base_dir": "android/libs",
+            "env": "LIBGODOT_CPP_ANDROID_PATH",
+            "no_unpack": "false"
+        }
+    ],
+    "react-native-builder-bob": {
+        "source": "js",
+        "output": "lib",
+        "targets": [
+            "commonjs",
+            "module",
+            [
+                "typescript",
+                {
+                    "project": "tsconfig.build.json"
+                }
+            ]
+        ]
+    },
+    "bin": {
+        "download-prebuilt": "./scripts/download-prebuilt.js"
+    },
+    "packageManager": "yarn@4.9.3"
+}

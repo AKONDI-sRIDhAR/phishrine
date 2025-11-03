@@ -1,0 +1,9 @@
+This directory is a placeholder for the City Pack 3D models.
+The application expects to find the following files here:
+- skyscraper.glb
+- house-with-driveway.glb
+- police-car.glb
+- road-bits.glb
+- casual-character.glb
+- large-building.glb
+...and other models from the pack.
